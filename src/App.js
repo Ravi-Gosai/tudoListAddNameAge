@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Form from './Components/Form';
+import { useState } from 'react';
+import ListItem from './Components/ListItem';
 
 function App() {
+
+  let [list,setList] = useState([])
+ const addList = (item) =>{
+  setList([...list,item])
+ }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div className='mainDiv'>
+    <Form onAddList={addList}></Form>
+      <div className='listOfItem'>
+      <ul>
+        {list.map((listItem)=><ListItem key={listItem.id} item={listItem}></ListItem>)}
+      </ul>
+      </div>
+     
+   </div>
   );
 }
 

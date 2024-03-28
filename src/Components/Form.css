@@ -1,0 +1,16 @@
+.formdiv{
+    /* background-color: blue; */
+    /* justify-content: center;
+    
+    */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 40px;
+}
+form input{
+    width: 30vw;
+    margin: 20px;
+
+}
+
